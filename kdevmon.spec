@@ -12,7 +12,6 @@ Source:		%{name}-%{version}-2.tar.bz2
 Patch1:		kdevmon-0.4.6-fix-crash.patch.bz2
 
 URL: 		http://www.Informatik.Uni-Oldenburg.DE/~bigboss/kdevmon/
-BuildRoot: 	%_tmppath/%{name}-buildroot
 BuildRequires:  kdelibs-devel
 
 %description
