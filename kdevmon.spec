@@ -49,8 +49,6 @@ CFLAGS="%optflags" CXXFLAGS="%optflags" \
 %install
 
 %makeinstall
-install -d %buildroot/%_menudir/
-kdedesktop2mdkmenu.pl Kdevmon "Applications/Monitoring"  %buildroot/%_datadir/applnk/Internet/kdevmon.desktop %buildroot/%_menudir/kdevmon
 
 %{find_lang} %{name}
 
@@ -63,7 +61,6 @@ kdedesktop2mdkmenu.pl Kdevmon "Applications/Monitoring"  %buildroot/%_datadir/ap
 %files -f %{name}.lang
 %defattr (-,root,root)
 %doc AUTHORS COPYING INSTALL ChangeLog README TODO 
-%_menudir/*
 %_bindir/kdevmon
 
 %_datadir/applnk/Internet/kdevmon.desktop
