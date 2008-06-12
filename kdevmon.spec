@@ -52,11 +52,15 @@ CFLAGS="%optflags" CXXFLAGS="%optflags" \
 
 %{find_lang} %{name}
 
+%if %mdkversion < 200900
 %post
 %{update_menus}
+%endif
 
+%if %mdkversion < 200900
 %postun
 %{clean_menus}
+%endif
 
 %files -f %{name}.lang
 %defattr (-,root,root)
