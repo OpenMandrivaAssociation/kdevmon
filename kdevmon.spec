@@ -25,32 +25,18 @@ you an overview of the amount of incoming/outgoing bits and the current and
 the maximum bit rate.
 
 %prep
-
 %setup -q
 %patch1 -p1 -b .fix_crash
 
-
 %build
-export QTDIR=%_prefix/lib/qt3
-export QTLIB=$QTDIR/%_lib
-export KDEDIR=%_libdir
-
-CFLAGS="%optflags" CXXFLAGS="%optflags" \
-./configure  \
-            --disable-rpath \
-	    --prefix=%_prefix \
-	    --mandir=%_mandir \
-	    --datadir=%_datadir \
-	    --disable-debug \
-		--enable-final
-
+%configure_kde3
 %make
 
 %install
+rm -fr %buildroot
+%makeinstall_std
 
-%makeinstall
-
-%{find_lang} %{name}
+%{find_lang} %{name} --with-html
 
 %if %mdkversion < 200900
 %post
@@ -65,13 +51,6 @@ CFLAGS="%optflags" CXXFLAGS="%optflags" \
 %files -f %{name}.lang
 %defattr (-,root,root)
 %doc AUTHORS COPYING INSTALL ChangeLog README TODO 
-%_bindir/kdevmon
-
-%_datadir/applnk/Internet/kdevmon.desktop
-
-%dir %_docdir/HTML/en/kdevmon/
-%_docdir/HTML/en/kdevmon/*
-
-%_datadir/icons/locolor/*
-
-
+%_kde3_bindir/kdevmon
+%_kde3_datadir/applnk/Internet/kdevmon.desktop
+%_kde3_iconsdir/locolor/*/*/*
