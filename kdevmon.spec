@@ -1,7 +1,7 @@
 %define name    kdevmon
 %define version 0.4.7
 %define svnrel  840945
-%define release %mkrel -c %svnrel 1
+%define release %mkrel -c %svnrel 2
 
 Summary:	A utility for monitoring the throughput of one network device
 Name:		%{name}
