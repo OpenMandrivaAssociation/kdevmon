@@ -10,7 +10,7 @@ Release:	%{release}
 License:	GPLv2+
 Group:		Monitoring
 Source:		%{name}-r%{svnrel}.tar.bz2
-URL: 		http://websvn.kde.org/trunk/playground/network/kdevmon/
+URL: 		https://websvn.kde.org/trunk/playground/network/kdevmon/
 BuildRoot: 	%_tmppath/%{name}-buildroot
 BuildRequires:  kdelibs4-devel
 
