@@ -12,6 +12,7 @@ Group:		Monitoring
 Source:		%{name}-r%{svnrel}.tar.bz2
 URL: 		https://websvn.kde.org/trunk/playground/network/kdevmon/
 BuildRoot: 	%_tmppath/%{name}-buildroot
+BuildRequires:	make
 BuildRequires:  kdelibs4-devel
 
 %description
